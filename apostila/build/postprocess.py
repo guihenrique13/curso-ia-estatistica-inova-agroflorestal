@@ -5,7 +5,8 @@
   sem linhas verticais, só 3 linhas horizontais (topo, abaixo do
   cabeçalho, fim), cabeçalho sem sombreamento;
 - estilo "Fonte da tabela" (Fonte/Nota abaixo das tabelas) em 9 pt, preso à tabela;
-- espaço acima dos títulos "Tabela N –" / "Figura N –".
+- espaço acima dos títulos "Tabela N –" / "Figura N –";
+- imagens (estilo "Figure") centralizadas e presas à fonte abaixo.
 Uso: postprocess.py arquivo.docx
 """
 import re, sys, zipfile, shutil, os
@@ -62,6 +63,12 @@ for item in zin.infolist():
         # espaço antes do título das tabelas/figuras
         xml = re.sub(r'(w:styleId="TableCaption".*?<w:keepNext\s*/>)',
                      r'\1<w:spacing w:before="240" w:after="60"/>', xml, count=1, flags=re.S)
+        # parágrafo da imagem (estilo "Figure"): centralizado, preso à fonte abaixo
+        xml = re.sub(r'(<w:style [^>]*w:styleId="Figure"[^>]*>.*?)(</w:style>)',
+                     lambda m: re.sub(r'<w:pPr>.*?</w:pPr>', '', m.group(1), flags=re.S)
+                     + '<w:pPr><w:keepNext/><w:spacing w:before="0" w:after="60"/>'
+                       '<w:jc w:val="center"/></w:pPr>' + m.group(2),
+                     xml, count=1, flags=re.S)
         data = xml.encode('utf-8')
     zout.writestr(item, data)
 zout.close(); zin.close()

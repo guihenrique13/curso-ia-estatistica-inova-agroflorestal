@@ -24,9 +24,19 @@ trap cleanup EXIT
 
 rm -rf "$TMPD"; mkdir -p "$TMPD"
 
+echo "0/4 figuras (apostila/figuras/*.png)"
+# Regenera as figuras se houver um Python com matplotlib; senão usa os PNGs já existentes.
+PY_FIG="${PY_FIG:-python3}"
+if "$PY_FIG" -c "import matplotlib, pandas" 2>/dev/null; then
+  "$PY_FIG" "$BUILD/figuras.py"
+else
+  echo "  (matplotlib/pandas indisponíveis em $PY_FIG: usando as figuras existentes)"
+fi
+
 echo "1/4 pandoc -> docx"
 "$PANDOC" "$APOST/apostila.md" -o "$APOST/apostila.docx" \
-  --from markdown --reference-doc="$BUILD/reference.docx" \
+  --from markdown-implicit_figures --resource-path="$APOST" \
+  --reference-doc="$BUILD/reference.docx" \
   --toc --toc-depth=2 --number-sections
 
 echo "2/4 pós-processamento (linhas de tabela sem quebra, tabelas ABNT)"

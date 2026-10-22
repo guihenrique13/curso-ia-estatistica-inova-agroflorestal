@@ -858,6 +858,20 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade.
 :::
 
+As médias da Tabela 2, com as letras do teste de Tukey, estão na Figura 1.
+
+::: {custom-style="Table Caption"}
+Figura 1 – Altura média de mudas de ipê-amarelo (cm) aos 120 dias, em função do substrato
+:::
+
+::: {custom-style="Figure"}
+![Gráfico de barras da altura média das mudas por substrato, com as letras do teste de Tukey](figuras/fig_dic_mudas.png){width=16cm}
+:::
+
+::: {custom-style="Fonte da tabela"}
+Fonte: dados fictícios do curso (2026).
+:::
+
 - p-valor do F = 2,09 × 10⁻⁷.
 - Shapiro-Wilk p = 0,807 (normal) e Bartlett p = 0,095 (homogêneo): pressupostos atendidos.
 
@@ -910,6 +924,20 @@ Nota: CV = 5,04 %. \*\* significativo a 1 % de probabilidade pelo teste F.
 Fonte: dados fictícios do curso (2026).
 
 Nota: Médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade.
+:::
+
+A Figura 2 mostra as mesmas médias em forma de gráfico.
+
+::: {custom-style="Table Caption"}
+Figura 2 – Produtividade média de cultivares de milho (kg ha⁻¹) em aleias de gliricídia
+:::
+
+::: {custom-style="Figure"}
+![Gráfico de barras da produtividade média por cultivar de milho, com as letras do teste de Tukey](figuras/fig_dbc_milho.png){width=16cm}
+:::
+
+::: {custom-style="Fonte da tabela"}
+Fonte: dados fictícios do curso (2026).
 :::
 
 - p-valores: cultivar 1,7 × 10⁻⁶; bloco 0,0039. Shapiro-Wilk p = 0,313 (normal).
@@ -988,6 +1016,20 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra minúscula na coluna (espécies dentro de cada adubação) e maiúscula na linha (adubações dentro de cada espécie) não diferem entre si pelo teste de Tukey a 5 % de probabilidade. Para aroeira, o efeito da adubação foi não significativo (F = 0,99; p = 0,385).
 :::
 
+O gráfico de interação (Figura 3) mostra por que é preciso desdobrar: as linhas das espécies não são paralelas.
+
+::: {custom-style="Table Caption"}
+Figura 3 – Massa seca média de mudas (g) aos 6 meses, por espécie florestal e adubação
+:::
+
+::: {custom-style="Figure"}
+![Gráfico de interação: massa seca por adubação, com uma linha para cada espécie](figuras/fig_fatorial.png){width=16cm}
+:::
+
+::: {custom-style="Fonte da tabela"}
+Fonte: dados fictícios do curso (2026).
+:::
+
 **Interpretação esperada:** o mogno-africano respondeu mais à adubação mineral; o angico respondeu igualmente às adubações orgânica e mineral; a **aroeira não respondeu à adubação**.
 
 **Atenção:** a IA às vezes interpreta os efeitos principais ("o mogno é a melhor espécie") **sem desdobrar** a interação. Com interação significativa, essa conclusão é incompleta. Se acontecer, peça o desdobramento.
@@ -1060,6 +1102,20 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra minúscula na coluna (cultivares dentro de cada sombreamento) não diferem entre si pelo teste de Tukey a 5 % de probabilidade. O efeito do sombreamento dentro da cultivar foi não significativo para Arara (p = 0,062) e Catuaí 144 (p = 0,083) e significativo para Topázio (p = 0,002); por ser um fator quantitativo, o sombreamento foi analisado por regressão.
 :::
 
+A Figura 4 compara as cultivares dentro de cada nível de sombreamento.
+
+::: {custom-style="Table Caption"}
+Figura 4 – Produtividade média de cultivares de café (sc ha⁻¹) em cada nível de sombreamento
+:::
+
+::: {custom-style="Figure"}
+![Gráfico de barras agrupadas da produtividade de cada cultivar de café em 0, 30 e 50 % de sombreamento](figuras/fig_cafe.png){width=16cm}
+:::
+
+::: {custom-style="Fonte da tabela"}
+Fonte: dados fictícios do curso (2026).
+:::
+
 **Sombreamento dentro de Topázio:** resposta quadrática (ŷ = 25,45 + 0,4639x − 0,0077x²), com máxima produtividade perto de 30 % de sombra. Como o sombreamento tem apenas 3 níveis, a curva passa exatamente pelas 3 médias (R² = 1), então interprete com cautela.
 
 **Atenção, o erro clássico:** se a IA fizer uma ANOVA comum, com um resíduo só (24 GL), o F do sombreamento vai dar perto de **17,7** em vez de **6,48**, porque ela testou a parcela com o erro errado. Isso faz o sombreamento parecer muito mais importante do que é. Esse é o tipo de erro que só quem confere percebe.
@@ -1129,18 +1185,22 @@ Nota: CV = 5,14 %. \*\* significativo a 1 % de probabilidade pelo teste F; ^ns^ 
 ::: {custom-style="Fonte da tabela"}
 Fonte: dados fictícios do curso (2026).
 
-Nota: Por ser um fator quantitativo, as doses não foram comparadas por teste de médias; a resposta está descrita pela equação de regressão (Figura 1).
+Nota: Por ser um fator quantitativo, as doses não foram comparadas por teste de médias; a resposta está descrita pela equação de regressão (Figura 5).
 :::
 
 ::: {custom-style="Table Caption"}
-Figura 1 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de nitrogênio em cobertura (kg ha⁻¹)
+Figura 5 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de nitrogênio em cobertura (kg ha⁻¹)
 :::
 
-> **O que o gráfico deve mostrar:** os 5 pontos das médias da Tabela 10 e a curva ajustada **ŷ = 41,16 + 0,2192x − 0,000639x²** (R² = 0,99), que sobe até a **DMET = 171,4 kg ha⁻¹** de N, onde o volume máximo estimado é **ŷmax ≈ 59,95 m³ ha⁻¹**, e cai levemente depois. Eixo x: "Dose de N (kg ha⁻¹)"; eixo y: "Volume (m³ ha⁻¹)"; equação e R² escritos dentro da área do gráfico. No padrão ABNT, o título vai **acima** da figura e **fora** da imagem, e a fonte vai abaixo.
+::: {custom-style="Figure"}
+![Gráfico de pontos das médias de volume por dose de N, com a curva quadrática ajustada e a linha da DMET](figuras/fig_doses.png){width=16cm}
+:::
 
 ::: {custom-style="Fonte da tabela"}
 Fonte: dados fictícios do curso (2026).
 :::
+
+> **O que conferir no gráfico que a IA gerar:** os mesmos elementos da Figura 5: os 5 pontos das médias da Tabela 10 e a curva ajustada **ŷ = 41,16 + 0,2192x − 0,000639x²** (R² = 0,99), que sobe até a **DMET = 171,4 kg ha⁻¹** de N, onde o volume máximo estimado é **ŷmax ≈ 59,95 m³ ha⁻¹**, e cai levemente depois. Eixo x: "Dose de N (kg ha⁻¹)"; eixo y: "Volume (m³ ha⁻¹)"; equação e R² escritos dentro da área do gráfico. No padrão ABNT, o título vai **acima** da figura e **fora** da imagem, e a fonte vai abaixo.
 
 - p-valor do F das doses = 3,1 × 10⁻⁷. Shapiro-Wilk p = 0,569 e Bartlett p = 0,563: pressupostos atendidos.
 - O modelo linear sozinho é significativo, mas deixa um **desvio da regressão significativo** (p = 0,0045): a reta não basta.
@@ -1225,6 +1285,20 @@ Nota: CV = 25,14 %. \*\* significativo a 1 % de probabilidade pelo teste F. Test
 Fonte: dados fictícios do curso (2026).
 
 Nota: Médias originais (sem transformação). A análise foi feita com os dados transformados em √(x + 0,5); médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade, aplicado aos dados transformados.
+:::
+
+Na Figura 6, os dados originais de cada armadilha mostram a variância crescendo junto com a média.
+
+::: {custom-style="Table Caption"}
+Figura 6 – Número de insetos-praga por armadilha (dados originais), em função do manejo
+:::
+
+::: {custom-style="Figure"}
+![Boxplots do número de insetos-praga por manejo, com os pontos de cada armadilha](figuras/fig_pragas.png){width=16cm}
+:::
+
+::: {custom-style="Fonte da tabela"}
+Fonte: dados fictícios do curso (2026).
 :::
 
 - Shapiro-Wilk: p = 0,834 nos dados originais e p = 0,506 nos transformados (normal nos dois casos). O problema era a **homogeneidade**.
@@ -1392,16 +1466,16 @@ Marque cada item antes de usar qualquer resultado:
 
 Resultados de referência calculados no R 4 com o pacote `ExpDes.pt` (script `notebooks/analise_exemplos.R`; saída completa em `dados/gabarito_resultados.txt`). Significância a 5 %.
 
-**As tabelas de ANOVA e de médias estão no Capítulo 6**, já no padrão ABNT, para não repeti-las aqui:
+**As tabelas de ANOVA e de médias, e os gráficos, estão no Capítulo 6**, já no padrão ABNT, para não repeti-las aqui:
 
-| Exercício | Tabelas no Capítulo 6 |
+| Exercício | Tabelas e figuras no Capítulo 6 |
 |---|---|
-| 1. DIC mudas (altura) | Tabela 1 (ANOVA) e Tabela 2 (Tukey) |
-| 2. DBC milho | Tabela 3 (ANOVA) e Tabela 4 (Tukey) |
-| 3. Fatorial espécie × adubação | Tabela 5 (ANOVA) e Tabela 6 (desdobramento) |
-| 4. Parcela subdividida, café | Tabela 7 (ANOVA) e Tabela 8 (cultivares em cada sombreamento) |
-| 5. Doses de N | Tabela 9 (ANOVA com regressão), Tabela 10 (médias) e Figura 1 |
-| 6. Pragas | Tabelas 11 e 12 (ANOVA original e transformada) e Tabela 13 (médias) |
+| 1. DIC mudas (altura) | Tabela 1 (ANOVA), Tabela 2 (Tukey) e Figura 1 |
+| 2. DBC milho | Tabela 3 (ANOVA), Tabela 4 (Tukey) e Figura 2 |
+| 3. Fatorial espécie × adubação | Tabela 5 (ANOVA), Tabela 6 (desdobramento) e Figura 3 |
+| 4. Parcela subdividida, café | Tabela 7 (ANOVA), Tabela 8 (cultivares em cada sombreamento) e Figura 4 |
+| 5. Doses de N | Tabela 9 (ANOVA com regressão), Tabela 10 (médias) e Figura 5 |
+| 6. Pragas | Tabelas 11 e 12 (ANOVA original e transformada), Tabela 13 (médias) e Figura 6 |
 
 Este apêndice traz os detalhes que não cabem nas tabelas: p-valores exatos, pressupostos e modelos de regressão.
 
