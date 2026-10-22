@@ -1,3 +1,5 @@
+> **Nota:** este é o roteiro inicial usado para gerar os slides no Genspark. A versão final (`curso-ia-estatistica.pdf`/`.pptx`, 44 slides) reordenou os blocos — os exercícios ficaram na última parte da aula — e acrescentou, para cada exercício, um slide de resultados com tabelas no padrão ABNT (Tabelas 1 a 12).
+
 # Roteiro dos slides — IA para Estatística Experimental
 
 Curso Inova Agroflorestal (UFVJM) · 4 horas · público sem experiência em programação.
