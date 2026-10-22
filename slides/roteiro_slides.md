@@ -1,4 +1,4 @@
-> **Nota:** este é o roteiro inicial usado para gerar os slides no Genspark. A versão final (`curso-ia-estatistica.pdf`/`.pptx`, 44 slides) reordenou os blocos — os exercícios ficaram na última parte da aula — e acrescentou, para cada exercício, um slide de resultados com tabelas no padrão ABNT (Tabelas 1 a 12).
+> **Nota:** este é o roteiro inicial usado para gerar os slides no Genspark. A versão final (`curso-ia-estatistica.pdf`/`.pptx`, 45 slides) reordenou os blocos — os exercícios ficaram na última parte da aula — e acrescentou, para cada exercício, um slide de resultados com tabelas no padrão ABNT (Tabelas 1 a 12), além do slide 5 com a evidência do experimento de Peng et al. (2023) sobre produtividade com IA.
 
 # Roteiro dos slides — IA para Estatística Experimental
 

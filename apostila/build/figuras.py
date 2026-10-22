@@ -272,6 +272,48 @@ def fig_pragas():
     salvar(fig, 'fig_pragas.png')
 
 
+def fig_copilot():
+    """Figura motivadora (Cap. 1): experimento de Peng et al. (2023), arXiv:2302.06590.
+
+    Valores publicados no artigo (não há CSV): tempo médio de quem concluiu a
+    tarefa, 71,17 min (com Copilot, n = 45) e 160,89 min (sem, n = 50); redução de
+    55,8 %; ganho estimado pelos próprios participantes, 35 % em média.
+    """
+    com, sem = 71.17, 160.89
+    reducao = (sem - com) / sem * 100
+    assert abs(reducao - 55.8) < 0.05, reducao   # confere com o artigo
+    estimado, real = 35.0, 55.8
+    fig, (a, b) = plt.subplots(2, 1, figsize=(LARG, 9.5 * CM))
+    # (a) tempo médio
+    y = [1, 0]
+    a.barh(y, [sem, com], height=0.5, color=['white', '0.45'], edgecolor='black', linewidth=0.8)
+    a.set_yticks(y, ['Sem IA', 'Com IA (Copilot)'])
+    for yi, v in zip(y, [sem, com]):
+        a.text(v + 2, yi, f'{br(v, 1)} min', va='center', ha='left', fontsize=9)
+    a.annotate('', xy=(com, 0.5), xytext=(sem, 0.5),
+               arrowprops=dict(arrowstyle='->', color='black', linewidth=0.9))
+    a.text((com + sem) / 2, 0.5, f'−{br(reducao, 1)} %', ha='center', va='center', fontsize=9,
+           fontweight='bold', bbox=dict(facecolor='white', edgecolor='none', pad=1.5))
+    a.set_xlim(0, 200)
+    a.set_ylim(-0.5, 1.5)
+    a.set_xlabel('Tempo médio para concluir a tarefa (min)')
+    a.xaxis.set_major_formatter(FMT)
+    # (b) ganho estimado × real
+    b.barh(y, [estimado, real], height=0.5, color=['white', '0.45'], edgecolor='black', linewidth=0.8)
+    b.set_yticks(y, ['Ganho estimado\npelos participantes', 'Ganho real medido'])
+    for yi, v in zip(y, [estimado, real]):
+        b.text(v + 0.6, yi, f'{br(v)} %', va='center', ha='left', fontsize=9)
+    b.set_xlim(0, 70)
+    b.set_ylim(-0.5, 1.5)
+    b.set_xlabel('Ganho de produtividade (%)')
+    b.xaxis.set_major_formatter(FMT)
+    for ax, letra in ((a, '(a)'), (b, '(b)')):
+        ax.text(-0.02, 1.08, letra, transform=ax.transAxes, ha='right', va='bottom',
+                fontsize=10, fontweight='bold')
+    fig.tight_layout(h_pad=1.5)
+    salvar(fig, 'fig_copilot.png')
+
+
 if __name__ == '__main__':
     print('figuras ->', OUT)
     fig_dic_mudas()
@@ -280,3 +322,4 @@ if __name__ == '__main__':
     fig_cafe()
     fig_doses()
     fig_pragas()
+    fig_copilot()

@@ -56,6 +56,28 @@ As IAs conversacionais, como o Gemini, o ChatGPT e o Claude, mudaram esse cenár
 - **pedir ajuda para planejar**: qual delineamento usar, quantas repetições, como sortear as parcelas;
 - **pedir o texto** de resultados no estilo de relatório ou TCC.
 
+## Quanto vale saber usar IA? Um experimento controlado
+
+Será que a IA ajuda mesmo, ou é só impressão? Peng et al. (2023) responderam a essa pergunta do jeito que nós, da estatística experimental, conhecemos bem: **com um experimento**. Eles recrutaram 95 programadores profissionais e **sortearam** quem ficaria em cada grupo: 45 receberam um assistente de IA (o GitHub Copilot) e 50 formaram o **grupo controle**, sem IA. A tarefa era a mesma para todos: programar um pequeno servidor web em JavaScript, o mais rápido possível. O "treinamento" do grupo com IA foi só um **vídeo de 1 minuto** sobre a ferramenta.
+
+O resultado está na Figura 1. Entre os que concluíram a tarefa, o grupo com IA levou, em média, **71,2 minutos**, contra **160,9 minutos** do grupo controle: uma redução de **55,8 %** no tempo. A diferença foi testada com um **teste t** (p = 0,0017) e o **intervalo de confiança de 95 %** para o ganho foi de 21 % a 89 %. Repare que o estudo tem todos os ingredientes deste curso: casualização, grupo controle, teste de hipótese e intervalo de confiança. Outro detalhe curioso: os próprios participantes **subestimaram** o efeito; em média, acharam que a IA os deixaria 35 % mais produtivos, quando o ganho medido foi de 55,8 %.
+
+::: {custom-style="Table Caption"}
+Figura 1 – Tempo para concluir a tarefa e ganho de produtividade com e sem assistente de IA
+:::
+
+::: {custom-style="Figure"}
+![Painel (a): barras horizontais do tempo médio para concluir a tarefa, 160,9 min sem IA e 71,2 min com IA, redução de 55,8 %. Painel (b): ganho estimado pelos participantes, 35 %, e ganho real medido, 55,8 %](figuras/fig_copilot.png){width=16cm}
+:::
+
+::: {custom-style="Fonte da tabela"}
+Fonte: adaptado de Peng et al. (2023).
+:::
+
+**O recado para este curso.** Bastou **1 minuto de orientação** para mudar o resultado. E quem mais ganhou foram os programadores **com menos experiência**, os que programam mais horas por dia e os de 25 a 44 anos (PENG et al., 2023). Ou seja: a IA ajuda justamente quem está começando, que é o público desta apostila.
+
+**Mas atenção aos limites.** Foi **uma única tarefa de programação**, padronizada; em outras tarefas, como a análise de um experimento agroflorestal, o ganho pode ser maior, menor ou nenhum. E o estudo mediu **rapidez**, não **qualidade**: ninguém conferiu se o código estava bem feito. Por isso, a regra deste curso continua valendo: a IA pode deixar você mais rápido, mas **confira sempre** o resultado (veja "Por que conferir sempre", adiante).
+
 ## O que a IA faz bem
 
 | A IA é ótima para... | Exemplo no experimento |
@@ -858,10 +880,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade.
 :::
 
-As médias da Tabela 2, com as letras do teste de Tukey, estão na Figura 1.
+As médias da Tabela 2, com as letras do teste de Tukey, estão na Figura 2.
 
 ::: {custom-style="Table Caption"}
-Figura 1 – Altura média de mudas de ipê-amarelo (cm) aos 120 dias, em função do substrato
+Figura 2 – Altura média de mudas de ipê-amarelo (cm) aos 120 dias, em função do substrato
 :::
 
 ::: {custom-style="Figure"}
@@ -926,10 +948,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade.
 :::
 
-A Figura 2 mostra as mesmas médias em forma de gráfico.
+A Figura 3 mostra as mesmas médias em forma de gráfico.
 
 ::: {custom-style="Table Caption"}
-Figura 2 – Produtividade média de cultivares de milho (kg ha⁻¹) em aleias de gliricídia
+Figura 3 – Produtividade média de cultivares de milho (kg ha⁻¹) em aleias de gliricídia
 :::
 
 ::: {custom-style="Figure"}
@@ -1016,10 +1038,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra minúscula na coluna (espécies dentro de cada adubação) e maiúscula na linha (adubações dentro de cada espécie) não diferem entre si pelo teste de Tukey a 5 % de probabilidade. Para aroeira, o efeito da adubação foi não significativo (F = 0,99; p = 0,385).
 :::
 
-O gráfico de interação (Figura 3) mostra por que é preciso desdobrar: as linhas das espécies não são paralelas.
+O gráfico de interação (Figura 4) mostra por que é preciso desdobrar: as linhas das espécies não são paralelas.
 
 ::: {custom-style="Table Caption"}
-Figura 3 – Massa seca média de mudas (g) aos 6 meses, por espécie florestal e adubação
+Figura 4 – Massa seca média de mudas (g) aos 6 meses, por espécie florestal e adubação
 :::
 
 ::: {custom-style="Figure"}
@@ -1102,10 +1124,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra minúscula na coluna (cultivares dentro de cada sombreamento) não diferem entre si pelo teste de Tukey a 5 % de probabilidade. O efeito do sombreamento dentro da cultivar foi não significativo para Arara (p = 0,062) e Catuaí 144 (p = 0,083) e significativo para Topázio (p = 0,002); por ser um fator quantitativo, o sombreamento foi analisado por regressão.
 :::
 
-A Figura 4 compara as cultivares dentro de cada nível de sombreamento.
+A Figura 5 compara as cultivares dentro de cada nível de sombreamento.
 
 ::: {custom-style="Table Caption"}
-Figura 4 – Produtividade média de cultivares de café (sc ha⁻¹) em cada nível de sombreamento
+Figura 5 – Produtividade média de cultivares de café (sc ha⁻¹) em cada nível de sombreamento
 :::
 
 ::: {custom-style="Figure"}
@@ -1185,11 +1207,11 @@ Nota: CV = 5,14 %. \*\* significativo a 1 % de probabilidade pelo teste F; ^ns^ 
 ::: {custom-style="Fonte da tabela"}
 Fonte: dados fictícios do curso (2026).
 
-Nota: Por ser um fator quantitativo, as doses não foram comparadas por teste de médias; a resposta está descrita pela equação de regressão (Figura 5).
+Nota: Por ser um fator quantitativo, as doses não foram comparadas por teste de médias; a resposta está descrita pela equação de regressão (Figura 6).
 :::
 
 ::: {custom-style="Table Caption"}
-Figura 5 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de nitrogênio em cobertura (kg ha⁻¹)
+Figura 6 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de nitrogênio em cobertura (kg ha⁻¹)
 :::
 
 ::: {custom-style="Figure"}
@@ -1200,7 +1222,7 @@ Figura 5 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de
 Fonte: dados fictícios do curso (2026).
 :::
 
-> **O que conferir no gráfico que a IA gerar:** os mesmos elementos da Figura 5: os 5 pontos das médias da Tabela 10 e a curva ajustada **ŷ = 41,16 + 0,2192x − 0,000639x²** (R² = 0,99), que sobe até a **DMET = 171,4 kg ha⁻¹** de N, onde o volume máximo estimado é **ŷmax ≈ 59,95 m³ ha⁻¹**, e cai levemente depois. Eixo x: "Dose de N (kg ha⁻¹)"; eixo y: "Volume (m³ ha⁻¹)"; equação e R² escritos dentro da área do gráfico. No padrão ABNT, o título vai **acima** da figura e **fora** da imagem, e a fonte vai abaixo.
+> **O que conferir no gráfico que a IA gerar:** os mesmos elementos da Figura 6: os 5 pontos das médias da Tabela 10 e a curva ajustada **ŷ = 41,16 + 0,2192x − 0,000639x²** (R² = 0,99), que sobe até a **DMET = 171,4 kg ha⁻¹** de N, onde o volume máximo estimado é **ŷmax ≈ 59,95 m³ ha⁻¹**, e cai levemente depois. Eixo x: "Dose de N (kg ha⁻¹)"; eixo y: "Volume (m³ ha⁻¹)"; equação e R² escritos dentro da área do gráfico. No padrão ABNT, o título vai **acima** da figura e **fora** da imagem, e a fonte vai abaixo.
 
 - p-valor do F das doses = 3,1 × 10⁻⁷. Shapiro-Wilk p = 0,569 e Bartlett p = 0,563: pressupostos atendidos.
 - O modelo linear sozinho é significativo, mas deixa um **desvio da regressão significativo** (p = 0,0045): a reta não basta.
@@ -1287,10 +1309,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias originais (sem transformação). A análise foi feita com os dados transformados em √(x + 0,5); médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade, aplicado aos dados transformados.
 :::
 
-Na Figura 6, os dados originais de cada armadilha mostram a variância crescendo junto com a média.
+Na Figura 7, os dados originais de cada armadilha mostram a variância crescendo junto com a média.
 
 ::: {custom-style="Table Caption"}
-Figura 6 – Número de insetos-praga por armadilha (dados originais), em função do manejo
+Figura 7 – Número de insetos-praga por armadilha (dados originais), em função do manejo
 :::
 
 ::: {custom-style="Figure"}
@@ -1397,6 +1419,14 @@ Se a IA ajudou na **redação**, isso também deve ser declarado (geralmente nos
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
 ```
 
+# Referências {-}
+
+PENG, S.; KALLIAMVAKOU, E.; CIHON, P.; DEMIRER, M. **The impact of AI on developer productivity**: evidence from GitHub Copilot. arXiv, 2023. Disponível em: <https://arxiv.org/abs/2302.06590>. Acesso em: 22 out. 2026.
+
+```{=openxml}
+<w:p><w:r><w:br w:type="page"/></w:r></w:p>
+```
+
 # Apêndice A: Glossário {-}
 
 **ANOVA (análise de variância):** método que divide a variação total dos dados em partes (tratamentos, blocos, resíduo) para testar se as médias dos tratamentos diferem.
@@ -1470,12 +1500,12 @@ Resultados de referência calculados no R 4 com o pacote `ExpDes.pt` (script `no
 
 | Exercício | Tabelas e figuras no Capítulo 6 |
 |---|---|
-| 1. DIC mudas (altura) | Tabela 1 (ANOVA), Tabela 2 (Tukey) e Figura 1 |
-| 2. DBC milho | Tabela 3 (ANOVA), Tabela 4 (Tukey) e Figura 2 |
-| 3. Fatorial espécie × adubação | Tabela 5 (ANOVA), Tabela 6 (desdobramento) e Figura 3 |
-| 4. Parcela subdividida, café | Tabela 7 (ANOVA), Tabela 8 (cultivares em cada sombreamento) e Figura 4 |
-| 5. Doses de N | Tabela 9 (ANOVA com regressão), Tabela 10 (médias) e Figura 5 |
-| 6. Pragas | Tabelas 11 e 12 (ANOVA original e transformada), Tabela 13 (médias) e Figura 6 |
+| 1. DIC mudas (altura) | Tabela 1 (ANOVA), Tabela 2 (Tukey) e Figura 2 |
+| 2. DBC milho | Tabela 3 (ANOVA), Tabela 4 (Tukey) e Figura 3 |
+| 3. Fatorial espécie × adubação | Tabela 5 (ANOVA), Tabela 6 (desdobramento) e Figura 4 |
+| 4. Parcela subdividida, café | Tabela 7 (ANOVA), Tabela 8 (cultivares em cada sombreamento) e Figura 5 |
+| 5. Doses de N | Tabela 9 (ANOVA com regressão), Tabela 10 (médias) e Figura 6 |
+| 6. Pragas | Tabelas 11 e 12 (ANOVA original e transformada), Tabela 13 (médias) e Figura 7 |
 
 Este apêndice traz os detalhes que não cabem nas tabelas: p-valores exatos, pressupostos e modelos de regressão.
 
