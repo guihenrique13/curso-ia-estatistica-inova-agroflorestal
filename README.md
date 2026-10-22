@@ -2,6 +2,7 @@
 
 
 > **Ver online:** https://guihenrique13.github.io/curso-ia-estatistica-inova-agroflorestal/ — página do curso com os slides no navegador.
+
 [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/guihenrique13/curso-ia-estatistica-inova-agroflorestal/blob/main/notebooks/analise_exemplos.ipynb)
 
 Materiais do curso **IA para Estatística Experimental**: apostila, "skills" (instruções prontas para a IA), planilhas de exemplo e um notebook com as análises feitas passo a passo. Não é preciso saber programar para aproveitar o curso.
