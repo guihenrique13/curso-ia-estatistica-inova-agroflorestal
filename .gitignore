@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# LibreOffice / Office: arquivos de trava e temporários
+.~lock*
+~$*
+lo_build_tmp_apostila/
+
+# Temporários do sistema e editores
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
