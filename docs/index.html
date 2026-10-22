@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IA para Estatística Experimental</title>
+<meta name="description" content="Materiais do curso IA para Estatística Experimental — Curso Inova Agroflorestal (UFVJM): slides, apostila, skills e dados.">
+<style>
+  :root {
+    --bg: #f3ecdf;
+    --text: #1f2a20;
+    --muted: #5d6656;
+    --green: #2f5134;
+    --accent: #b5832f;
+    --card: #fbf7ef;
+    --border: #ded3bf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b241c;
+      --text: #f0eadf;
+      --muted: #b7bfae;
+      --green: #8fbf8f;
+      --accent: #d9a54a;
+      --card: #243026;
+      --border: #3a4a3c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 16px 56px; }
+  .tag { color: var(--accent); letter-spacing: .18em; font-size: .78rem; text-transform: uppercase; font-weight: 600; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: 8px 0 12px; }
+  h1 em { color: var(--green); }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
+  .hero { display: block; margin: 28px 0; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
+  .hero img { width: 100%; display: block; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 8px; }
+  .card {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card h2 { font-size: 1.05rem; margin: 0 0 6px; color: var(--green); }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  footer { margin-top: 40px; color: var(--muted); font-size: .85rem; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="tag">Curso Inova Agroflorestal · UFVJM</div>
+  <h1>IA para <em>Estatística Experimental</em></h1>
+  <p class="lead">Do campo à ANOVA com Gemini, sem precisar programar. Slides, apostila, skills prontas e dados de exemplo.</p>
+
+  <a class="hero" href="slides/" aria-label="Abrir os slides">
+    <img src="slides/img/s-01.jpg" alt="Capa dos slides: IA para Estatística Experimental">
+  </a>
+
+  <div class="grid">
+    <a class="card" href="slides/">
+      <h2>Slides da aula</h2>
+      <p>46 slides no navegador. Use as setas do teclado, deslize no celular ou aperte F para tela cheia.</p>
+    </a>
+    <a class="card" href="https://github.com/guihenrique13/curso-ia-estatistica-inova-agroflorestal/raw/main/apostila/apostila.pdf">
+      <h2>Apostila (PDF)</h2>
+      <p>Passo a passo, prompts prontos, tabelas no padrão ABNT e gabarito dos exercícios.</p>
+    </a>
+    <a class="card" href="https://github.com/guihenrique13/curso-ia-estatistica-inova-agroflorestal/tree/main/skills">
+      <h2>Skills de estatística</h2>
+      <p>Arquivos para criar seu Gem no Gemini (ou usar no ChatGPT e no Claude). Comece pelo <code>gem-unico.md</code>.</p>
+    </a>
+    <a class="card" href="https://github.com/guihenrique13/curso-ia-estatistica-inova-agroflorestal/tree/main/dados">
+      <h2>Dados de exemplo</h2>
+      <p>Seis experimentos fictícios (DIC, DBC, fatorial, parcela subdividida, doses, contagem) em CSV e XLSX.</p>
+    </a>
+    <a class="card" href="https://colab.research.google.com/github/guihenrique13/curso-ia-estatistica-inova-agroflorestal/blob/main/notebooks/analise_exemplos.ipynb">
+      <h2>Notebook no Colab</h2>
+      <p>O "código por trás" das análises, pronto para rodar no navegador.</p>
+    </a>
+    <a class="card" href="https://github.com/guihenrique13/curso-ia-estatistica-inova-agroflorestal">
+      <h2>Repositório completo</h2>
+      <p>Todos os arquivos, incluindo o PPTX editável dos slides.</p>
+    </a>
+  </div>
+
+  <footer>
+    Dados fictícios, criados para fins didáticos. A disponibilidade dos recursos do Gemini muda com o tempo: confira antes de usar.
+  </footer>
+</div>
+</body>
+</html>

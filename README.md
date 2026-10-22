@@ -1,5 +1,7 @@
 # IA para Estatística Experimental — Curso Inova Agroflorestal (UFVJM)
 
+
+> **Ver online:** https://guihenrique13.github.io/curso-ia-estatistica-inova-agroflorestal/ — página do curso com os slides no navegador.
 [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/guihenrique13/curso-ia-estatistica-inova-agroflorestal/blob/main/notebooks/analise_exemplos.ipynb)
 
 Materiais do curso **IA para Estatística Experimental**: apostila, "skills" (instruções prontas para a IA), planilhas de exemplo e um notebook com as análises feitas passo a passo. Não é preciso saber programar para aproveitar o curso.
@@ -19,7 +21,7 @@ Materiais do curso **IA para Estatística Experimental**: apostila, "skills" (in
 | [skills/](skills/) | Arquivos de instruções que transformam a IA num assistente de estatística experimental: planejamento, DIC/DBC com ANOVA e Tukey, fatorial e parcela subdividida, regressão de doses e redação do relatório no padrão ABNT. O `gem-unico.md` junta tudo num só arquivo. |
 | [dados/](dados/) | Planilhas de exemplo (`.csv` e `.xlsx`), o dicionário de dados, um exercício com uma planilha de campo "bagunçada", o gabarito dos resultados e o script que gera os dados. |
 | [notebooks/](notebooks/) | Notebook em Python para o Google Colab (`analise_exemplos.ipynb`), um script equivalente em R e o script que monta o notebook. |
-| [slides/](slides/) | Slides da aula (46 slides): [PDF](slides/curso-ia-estatistica.pdf) para projetar e [PPTX](slides/curso-ia-estatistica.pptx) editável (abre no PowerPoint, Google Slides ou Canva). O arquivo `roteiro_slides.md` é o roteiro original usado para gerar o deck. |
+| [slides/](slides/) | Slides da aula (46 slides): [PDF](slides/curso-ia-estatistica.pdf) para projetar e [PPTX](slides/curso-ia-estatistica.pptx) editável (abre no PowerPoint, Google Slides ou Canva). O arquivo `roteiro_slides.md` é o roteiro original usado para gerar o deck; `gerar_html.sh` regenera a versão web em `docs/slides/`. |
 
 ## Sobre os dados
 

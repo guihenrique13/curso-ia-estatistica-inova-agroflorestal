@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slides — IA para Estatística Experimental</title>
+<meta name="description" content="Slides do curso IA para Estatística Experimental — Curso Inova Agroflorestal (UFVJM).">
+<style>
+  :root {
+    --bg: #1d2a1f;
+    --panel: #26362a;
+    --text: #f3ecdf;
+    --muted: #b9c2b0;
+    --accent: #c9963b;
+    --slide-bg: #f3ecdf;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px;
+    background: var(--panel);
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 1rem; margin: 0; font-weight: 600; }
+  header nav { display: flex; gap: 8px; flex-wrap: wrap; }
+  a, button {
+    color: var(--text);
+    background: transparent;
+    border: 1px solid #4b5f4f;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font: inherit;
+    font-size: .9rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:hover, button:hover { border-color: var(--accent); color: var(--accent); }
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    min-height: 0;
+    position: relative;
+  }
+  #slide {
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--slide-bg);
+    box-shadow: 0 8px 30px rgba(0,0,0,.4);
+    border-radius: 4px;
+    object-fit: contain;
+    user-select: none;
+  }
+  .zone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    cursor: pointer;
+  }
+  .zone.prev { left: 0; }
+  .zone.next { right: 0; }
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: var(--panel);
+  }
+  #counter { min-width: 70px; text-align: center; color: var(--muted); font-variant-numeric: tabular-nums; }
+  #grid {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    overflow-y: auto;
+    padding: 16px;
+    z-index: 10;
+  }
+  #grid.open { display: block; }
+  #grid .bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  #grid .thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  #grid figure { margin: 0; cursor: pointer; }
+  #grid img { width: 100%; border-radius: 4px; border: 2px solid transparent; display: block; }
+  #grid figure.current img { border-color: var(--accent); }
+  #grid figcaption { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  body:fullscreen header, body:fullscreen footer { display: none; }
+  body:fullscreen main { padding: 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>IA para Estatística Experimental · Curso Inova Agroflorestal</h1>
+  <nav>
+    <button id="btn-grid" type="button">Todos os slides</button>
+    <button id="btn-full" type="button">Tela cheia</button>
+    <a href="https://github.com/guihenrique13/curso-ia-estatistica-inova-agroflorestal/raw/main/slides/curso-ia-estatistica.pdf">PDF</a>
+    <a href="../">Início do curso</a>
+  </nav>
+</header>
+
+<main>
+  <img id="slide" src="img/s-01.jpg" alt="">
+  <div class="zone prev" id="zone-prev" aria-hidden="true"></div>
+  <div class="zone next" id="zone-next" aria-hidden="true"></div>
+  <p id="slide-text" class="sr" aria-live="polite"></p>
+</main>
+
+<footer>
+  <button id="btn-prev" type="button" aria-label="Slide anterior">← Anterior</button>
+  <span id="counter">1 / 46</span>
+  <button id="btn-next" type="button" aria-label="Próximo slide">Próximo →</button>
+</footer>
+
+<div id="grid" role="dialog" aria-label="Todos os slides">
+  <div class="bar">
+    <strong>Todos os slides</strong>
+    <button id="btn-close" type="button">Fechar</button>
+  </div>
+  <div class="thumbs" id="thumbs"></div>
+</div>
+
+<script>
+  const TOTAL = 46;
+  const pad = n => String(n).padStart(2, "0");
+  const src = n => `img/s-${pad(n)}.jpg`;
+  let textos = [];
+  let atual = 1;
+
+  const img = document.getElementById("slide");
+  const counter = document.getElementById("counter");
+  const slideText = document.getElementById("slide-text");
+  const grid = document.getElementById("grid");
+  const thumbs = document.getElementById("thumbs");
+
+  function mostrar(n) {
+    atual = Math.min(Math.max(1, n), TOTAL);
+    img.src = src(atual);
+    const t = textos[atual - 1] || `Slide ${atual}`;
+    img.alt = t;
+    slideText.textContent = t;
+    counter.textContent = `${atual} / ${TOTAL}`;
+    history.replaceState(null, "", `#${atual}`);
+    // pré-carrega o próximo
+    if (atual < TOTAL) new Image().src = src(atual + 1);
+    document.querySelectorAll("#thumbs figure").forEach((f, i) =>
+      f.classList.toggle("current", i + 1 === atual));
+  }
+
+  const anterior = () => mostrar(atual - 1);
+  const proximo = () => mostrar(atual + 1);
+
+  document.getElementById("btn-prev").onclick = anterior;
+  document.getElementById("btn-next").onclick = proximo;
+  document.getElementById("zone-prev").onclick = anterior;
+  document.getElementById("zone-next").onclick = proximo;
+
+  document.getElementById("btn-full").onclick = () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.body.requestFullscreen?.();
+  };
+
+  document.getElementById("btn-grid").onclick = () => grid.classList.add("open");
+  document.getElementById("btn-close").onclick = () => grid.classList.remove("open");
+
+  for (let i = 1; i <= TOTAL; i++) {
+    const f = document.createElement("figure");
+    f.innerHTML = `<img loading="lazy" src="${src(i)}" alt=""><figcaption>Slide ${i}</figcaption>`;
+    f.onclick = () => { mostrar(i); grid.classList.remove("open"); };
+    thumbs.appendChild(f);
+  }
+
+  document.addEventListener("keydown", e => {
+    if (grid.classList.contains("open")) {
+      if (e.key === "Escape") grid.classList.remove("open");
+      return;
+    }
+    if (["ArrowRight", "PageDown", " ", "Enter"].includes(e.key)) { e.preventDefault(); proximo(); }
+    else if (["ArrowLeft", "PageUp", "Backspace"].includes(e.key)) { e.preventDefault(); anterior(); }
+    else if (e.key === "Home") mostrar(1);
+    else if (e.key === "End") mostrar(TOTAL);
+    else if (e.key.toLowerCase() === "f") document.getElementById("btn-full").click();
+    else if (e.key.toLowerCase() === "g") grid.classList.add("open");
+  });
+
+  // deslizar no celular
+  let x0 = null;
+  document.querySelector("main").addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
+  document.querySelector("main").addEventListener("touchend", e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) (dx < 0 ? proximo : anterior)();
+    x0 = null;
+  });
+
+  const doHash = () => parseInt(location.hash.slice(1)) || 1;
+  window.addEventListener("hashchange", () => { if (doHash() !== atual) mostrar(doHash()); });
+  mostrar(doHash());
+
+  fetch("textos.json")
+    .then(r => r.ok ? r.json() : [])
+    .catch(() => [])
+    .then(t => { textos = t; mostrar(atual); });
+</script>
+</body>
+</html>
