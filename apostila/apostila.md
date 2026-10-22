@@ -78,6 +78,32 @@ Fonte: adaptado de Peng et al. (2023).
 
 **Mas atenção aos limites.** Foi **uma única tarefa de programação**, padronizada; em outras tarefas, como a análise de um experimento agroflorestal, o ganho pode ser maior, menor ou nenhum. E o estudo mediu **rapidez**, não **qualidade**: ninguém conferiu se o código estava bem feito. Por isso, a regra deste curso continua valendo: a IA pode deixar você mais rápido, mas **confira sempre** o resultado (veja "Por que conferir sempre", adiante).
 
+## E no trabalho real? 5 mil atendentes com IA
+
+O experimento de Peng et al. (2023) foi feito "no laboratório", com uma tarefa curta. E no dia a dia de uma empresa? Brynjolfsson, Li e Raymond (2025) acompanharam **5.172 atendentes de suporte ao cliente** de uma empresa da lista Fortune 500, que passaram a contar com um assistente de conversa baseado no GPT-3. O assistente lia o chat com o cliente e sugeria respostas em tempo real; o atendente podia usar, editar ou ignorar a sugestão. Em média, o número de **atendimentos resolvidos por hora subiu 15 %** (15,2 % na especificação principal do artigo). O ganho, porém, foi muito desigual: os **20 % menos habilidosos** resolveram **36 %** mais atendimentos por hora, os atendentes com menos experiência ganharam cerca de **30 %**, e os **20 % mais habilidosos** não tiveram mudança significativa. Mais ainda: atendentes **com IA e 2 meses de casa** rendiam tanto quanto atendentes **sem IA com mais de 6 meses**. Até os clientes mudaram: ficaram mais educados e pediram menos para "falar com o gerente" (BRYNJOLFSSON; LI; RAYMOND, 2025). Os principais números estão na Figura 2.
+
+::: {custom-style="Table Caption"}
+Figura 2 – Ganho de produtividade com IA no atendimento ao cliente e tempo de casa para o mesmo desempenho
+:::
+
+::: {custom-style="Figure"}
+![Painel (a): barras horizontais do ganho em atendimentos resolvidos por hora: média geral, mais 15 %; 20 % menos habilidosos, mais 36 %; 20 % mais habilidosos, aproximadamente zero, não significativo. Painel (b): tempo de casa para o mesmo desempenho: 2 meses com IA e mais de 6 meses sem IA](figuras/fig_trabalho_ia.png){width=16cm}
+:::
+
+::: {custom-style="Fonte da tabela"}
+Fonte: adaptado de Brynjolfsson, Li e Raymond (2025).
+
+Nota: n.s. = sem diferença estatisticamente significativa. Os grupos intermediários de habilidade não foram incluídos porque o artigo os apresenta apenas em gráfico.
+:::
+
+Repare na diferença de **delineamento** em relação ao estudo anterior. Aqui ninguém sorteou quem receberia a IA: a ferramenta foi liberada **aos poucos**, para grupos diferentes em meses diferentes (implantação escalonada), num **ambiente real de trabalho**. Os autores então compararam cada atendente com ele mesmo, antes e depois da IA, e com os colegas que ainda não tinham recebido a ferramenta no mesmo mês (um modelo de **diferenças em diferenças**, com efeitos fixos de atendente e de mês). É um estudo **quase-experimental**: ganha em realismo, mas, sem a casualização, precisa de mais cuidado para afastar outras explicações. É a mesma escolha que fazemos no campo entre um **experimento casualizado** e um **estudo observacional**.
+
+**O recado para este curso.** A explicação dos autores é que a IA **espalha as boas práticas** dos atendentes mais habilidosos e experientes para os iniciantes: o modelo foi treinado dando peso maior às conversas dos melhores atendentes. Por isso o ganho foi maior justamente para **quem está começando**, que é o público desta apostila.
+
+**Mas atenção aos limites.** Para os mais habilidosos, a **qualidade caiu um pouco** (a taxa de resolução e a satisfação do cliente tiveram quedas pequenas, mas significativas). Ou seja: mesmo para quem já sabe, **confira sempre** o que a IA sugere. E os resultados vêm de **uma única empresa** e de **um único tipo de tarefa** (atendimento por chat).
+
+Os dois estudos, um experimento casualizado e outro no trabalho real, apontam na mesma direção: saber usar IA faz uma diferença **mensurável**, sobretudo para iniciantes, e conferir o resultado continua sendo indispensável.
+
 ## O que a IA faz bem
 
 | A IA é ótima para... | Exemplo no experimento |
@@ -880,10 +906,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade.
 :::
 
-As médias da Tabela 2, com as letras do teste de Tukey, estão na Figura 2.
+As médias da Tabela 2, com as letras do teste de Tukey, estão na Figura 3.
 
 ::: {custom-style="Table Caption"}
-Figura 2 – Altura média de mudas de ipê-amarelo (cm) aos 120 dias, em função do substrato
+Figura 3 – Altura média de mudas de ipê-amarelo (cm) aos 120 dias, em função do substrato
 :::
 
 ::: {custom-style="Figure"}
@@ -948,10 +974,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade.
 :::
 
-A Figura 3 mostra as mesmas médias em forma de gráfico.
+A Figura 4 mostra as mesmas médias em forma de gráfico.
 
 ::: {custom-style="Table Caption"}
-Figura 3 – Produtividade média de cultivares de milho (kg ha⁻¹) em aleias de gliricídia
+Figura 4 – Produtividade média de cultivares de milho (kg ha⁻¹) em aleias de gliricídia
 :::
 
 ::: {custom-style="Figure"}
@@ -1038,10 +1064,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra minúscula na coluna (espécies dentro de cada adubação) e maiúscula na linha (adubações dentro de cada espécie) não diferem entre si pelo teste de Tukey a 5 % de probabilidade. Para aroeira, o efeito da adubação foi não significativo (F = 0,99; p = 0,385).
 :::
 
-O gráfico de interação (Figura 4) mostra por que é preciso desdobrar: as linhas das espécies não são paralelas.
+O gráfico de interação (Figura 5) mostra por que é preciso desdobrar: as linhas das espécies não são paralelas.
 
 ::: {custom-style="Table Caption"}
-Figura 4 – Massa seca média de mudas (g) aos 6 meses, por espécie florestal e adubação
+Figura 5 – Massa seca média de mudas (g) aos 6 meses, por espécie florestal e adubação
 :::
 
 ::: {custom-style="Figure"}
@@ -1124,10 +1150,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias seguidas pela mesma letra minúscula na coluna (cultivares dentro de cada sombreamento) não diferem entre si pelo teste de Tukey a 5 % de probabilidade. O efeito do sombreamento dentro da cultivar foi não significativo para Arara (p = 0,062) e Catuaí 144 (p = 0,083) e significativo para Topázio (p = 0,002); por ser um fator quantitativo, o sombreamento foi analisado por regressão.
 :::
 
-A Figura 5 compara as cultivares dentro de cada nível de sombreamento.
+A Figura 6 compara as cultivares dentro de cada nível de sombreamento.
 
 ::: {custom-style="Table Caption"}
-Figura 5 – Produtividade média de cultivares de café (sc ha⁻¹) em cada nível de sombreamento
+Figura 6 – Produtividade média de cultivares de café (sc ha⁻¹) em cada nível de sombreamento
 :::
 
 ::: {custom-style="Figure"}
@@ -1207,11 +1233,11 @@ Nota: CV = 5,14 %. \*\* significativo a 1 % de probabilidade pelo teste F; ^ns^ 
 ::: {custom-style="Fonte da tabela"}
 Fonte: dados fictícios do curso (2026).
 
-Nota: Por ser um fator quantitativo, as doses não foram comparadas por teste de médias; a resposta está descrita pela equação de regressão (Figura 6).
+Nota: Por ser um fator quantitativo, as doses não foram comparadas por teste de médias; a resposta está descrita pela equação de regressão (Figura 7).
 :::
 
 ::: {custom-style="Table Caption"}
-Figura 6 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de nitrogênio em cobertura (kg ha⁻¹)
+Figura 7 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de nitrogênio em cobertura (kg ha⁻¹)
 :::
 
 ::: {custom-style="Figure"}
@@ -1222,7 +1248,7 @@ Figura 6 – Volume de madeira de eucalipto (m³ ha⁻¹) em função da dose de
 Fonte: dados fictícios do curso (2026).
 :::
 
-> **O que conferir no gráfico que a IA gerar:** os mesmos elementos da Figura 6: os 5 pontos das médias da Tabela 10 e a curva ajustada **ŷ = 41,16 + 0,2192x − 0,000639x²** (R² = 0,99), que sobe até a **DMET = 171,4 kg ha⁻¹** de N, onde o volume máximo estimado é **ŷmax ≈ 59,95 m³ ha⁻¹**, e cai levemente depois. Eixo x: "Dose de N (kg ha⁻¹)"; eixo y: "Volume (m³ ha⁻¹)"; equação e R² escritos dentro da área do gráfico. No padrão ABNT, o título vai **acima** da figura e **fora** da imagem, e a fonte vai abaixo.
+> **O que conferir no gráfico que a IA gerar:** os mesmos elementos da Figura 7: os 5 pontos das médias da Tabela 10 e a curva ajustada **ŷ = 41,16 + 0,2192x − 0,000639x²** (R² = 0,99), que sobe até a **DMET = 171,4 kg ha⁻¹** de N, onde o volume máximo estimado é **ŷmax ≈ 59,95 m³ ha⁻¹**, e cai levemente depois. Eixo x: "Dose de N (kg ha⁻¹)"; eixo y: "Volume (m³ ha⁻¹)"; equação e R² escritos dentro da área do gráfico. No padrão ABNT, o título vai **acima** da figura e **fora** da imagem, e a fonte vai abaixo.
 
 - p-valor do F das doses = 3,1 × 10⁻⁷. Shapiro-Wilk p = 0,569 e Bartlett p = 0,563: pressupostos atendidos.
 - O modelo linear sozinho é significativo, mas deixa um **desvio da regressão significativo** (p = 0,0045): a reta não basta.
@@ -1309,10 +1335,10 @@ Fonte: dados fictícios do curso (2026).
 Nota: Médias originais (sem transformação). A análise foi feita com os dados transformados em √(x + 0,5); médias seguidas pela mesma letra na coluna não diferem entre si pelo teste de Tukey a 5 % de probabilidade, aplicado aos dados transformados.
 :::
 
-Na Figura 7, os dados originais de cada armadilha mostram a variância crescendo junto com a média.
+Na Figura 8, os dados originais de cada armadilha mostram a variância crescendo junto com a média.
 
 ::: {custom-style="Table Caption"}
-Figura 7 – Número de insetos-praga por armadilha (dados originais), em função do manejo
+Figura 8 – Número de insetos-praga por armadilha (dados originais), em função do manejo
 :::
 
 ::: {custom-style="Figure"}
@@ -1421,6 +1447,8 @@ Se a IA ajudou na **redação**, isso também deve ser declarado (geralmente nos
 
 # Referências {-}
 
+BRYNJOLFSSON, E.; LI, D.; RAYMOND, L. Generative AI at work. **The Quarterly Journal of Economics**, v. 140, n. 2, p. 889-942, 2025. DOI: https://doi.org/10.1093/qje/qjae044.
+
 PENG, S.; KALLIAMVAKOU, E.; CIHON, P.; DEMIRER, M. **The impact of AI on developer productivity**: evidence from GitHub Copilot. arXiv, 2023. Disponível em: <https://arxiv.org/abs/2302.06590>. Acesso em: 22 out. 2026.
 
 ```{=openxml}
@@ -1500,12 +1528,12 @@ Resultados de referência calculados no R 4 com o pacote `ExpDes.pt` (script `no
 
 | Exercício | Tabelas e figuras no Capítulo 6 |
 |---|---|
-| 1. DIC mudas (altura) | Tabela 1 (ANOVA), Tabela 2 (Tukey) e Figura 2 |
-| 2. DBC milho | Tabela 3 (ANOVA), Tabela 4 (Tukey) e Figura 3 |
-| 3. Fatorial espécie × adubação | Tabela 5 (ANOVA), Tabela 6 (desdobramento) e Figura 4 |
-| 4. Parcela subdividida, café | Tabela 7 (ANOVA), Tabela 8 (cultivares em cada sombreamento) e Figura 5 |
-| 5. Doses de N | Tabela 9 (ANOVA com regressão), Tabela 10 (médias) e Figura 6 |
-| 6. Pragas | Tabelas 11 e 12 (ANOVA original e transformada), Tabela 13 (médias) e Figura 7 |
+| 1. DIC mudas (altura) | Tabela 1 (ANOVA), Tabela 2 (Tukey) e Figura 3 |
+| 2. DBC milho | Tabela 3 (ANOVA), Tabela 4 (Tukey) e Figura 4 |
+| 3. Fatorial espécie × adubação | Tabela 5 (ANOVA), Tabela 6 (desdobramento) e Figura 5 |
+| 4. Parcela subdividida, café | Tabela 7 (ANOVA), Tabela 8 (cultivares em cada sombreamento) e Figura 6 |
+| 5. Doses de N | Tabela 9 (ANOVA com regressão), Tabela 10 (médias) e Figura 7 |
+| 6. Pragas | Tabelas 11 e 12 (ANOVA original e transformada), Tabela 13 (médias) e Figura 8 |
 
 Este apêndice traz os detalhes que não cabem nas tabelas: p-valores exatos, pressupostos e modelos de regressão.
 

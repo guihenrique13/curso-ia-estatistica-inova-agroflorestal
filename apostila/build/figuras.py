@@ -314,6 +314,58 @@ def fig_copilot():
     salvar(fig, 'fig_copilot.png')
 
 
+def fig_trabalho():
+    """Figura motivadora (Cap. 1): Brynjolfsson, Li e Raymond (2025), QJE 140(2), 889-942.
+
+    Valores citados no texto do artigo (não há CSV): ganho médio de 15 % em
+    resoluções por hora (resumo; 0,30 sobre a média pré-tratamento de 1,97, ou
+    15,2 %, na especificação com efeitos fixos de agente e de tempo de casa,
+    p. 907); +36 % no quintil de menor habilidade (0,5 resolução/h, p. 911);
+    nenhuma mudança significativa no quintil de maior habilidade (p. 911);
+    agentes com IA e 2 meses de casa rendem como agentes sem IA com mais de
+    6 meses (p. 891 e 916). Os quintis intermediários só aparecem em gráfico,
+    sem valores no texto, e por isso não são plotados.
+    """
+    assert abs(0.30 / 1.97 * 100 - 15.2) < 0.05     # Tabela II, coluna (3)
+    assert abs(0.47 / 1.97 * 100 - 23.9) < 0.05     # Tabela II, coluna (1)
+    media, baixo = 15.0, 36.0
+    fig, (a, b) = plt.subplots(2, 1, figsize=(LARG, 8.5 * CM),
+                               gridspec_kw=dict(height_ratios=[3, 2]))
+    # (a) ganho de produtividade por grupo
+    y = [2, 1, 0]
+    a.barh(y[:2], [media, baixo], height=0.5, color=['white', '0.45'],
+           edgecolor='black', linewidth=0.8)
+    a.plot([0], [y[2]], marker='|', color='black', markersize=12, markeredgewidth=1.5)
+    a.set_yticks(y, ['Média geral', 'Menos habilidosos\n(20 % inferiores)',
+                     'Mais habilidosos\n(20 % superiores)'])
+    for yi, v in zip(y[:2], [media, baixo]):
+        a.text(v + 0.6, yi, f'+{br(v)} %', va='center', ha='left', fontsize=9)
+    a.text(1.0, y[2], '≈ 0 (n.s.)', va='center', ha='left', fontsize=9)
+    a.set_xlim(0, 45)
+    a.set_ylim(-0.5, 2.5)
+    a.set_xlabel('Ganho em atendimentos resolvidos por hora (%)')
+    a.xaxis.set_major_formatter(FMT)
+    # (b) equivalência de experiência: tempo de casa para o mesmo desempenho
+    yb = [1, 0]
+    b.barh(yb[0], 6, height=0.5, color='white', edgecolor='black', linewidth=0.8)
+    b.annotate('', xy=(7.6, yb[0]), xytext=(6, yb[0]),
+               arrowprops=dict(arrowstyle='->', color='black', linewidth=0.9, linestyle='--'))
+    b.barh(yb[1], 2, height=0.5, color='0.45', edgecolor='black', linewidth=0.8)
+    b.text(7.8, yb[0], 'mais de 6 meses', va='center', ha='left', fontsize=9)
+    b.text(2.2, yb[1], '2 meses', va='center', ha='left', fontsize=9)
+    b.set_yticks(yb, ['Sem IA', 'Com IA'])
+    b.set_xlim(0, 12)
+    b.set_xticks(range(0, 13, 2))
+    b.set_ylim(-0.5, 1.5)
+    b.set_xlabel('Tempo de casa para o mesmo desempenho (meses)')
+    b.xaxis.set_major_formatter(FMT)
+    for ax, letra in ((a, '(a)'), (b, '(b)')):
+        ax.text(-0.02, 1.06, letra, transform=ax.transAxes, ha='right', va='bottom',
+                fontsize=10, fontweight='bold')
+    fig.tight_layout(h_pad=1.5)
+    salvar(fig, 'fig_trabalho_ia.png')
+
+
 if __name__ == '__main__':
     print('figuras ->', OUT)
     fig_dic_mudas()
@@ -323,3 +375,4 @@ if __name__ == '__main__':
     fig_doses()
     fig_pragas()
     fig_copilot()
+    fig_trabalho()
